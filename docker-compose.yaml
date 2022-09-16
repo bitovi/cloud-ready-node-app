@@ -1,0 +1,19 @@
+# docker compose api version - do not edit
+version: "3.8"
+
+# A list of containers we want to run. We're just running 1 here
+services:
+  # Our service is called "my-app"
+  my-app:
+  # "my-app" is a docker image that will be built on demand
+    build:
+      # The `Dockerfile` exists in the same directory
+      context: .
+    # Will create a Docker image called "my-node-app"
+    image: my-node-app
+    # Will expose the running container on localhost:9000 regardless of what port the app is actually listening on (controlled by MY_PORT env var).
+    ports:
+      - "9000:${MY_PORT}"
+    # Pass in env var PORT to the running container
+    environment:
+      PORT: ${MY_PORT}
