@@ -18,13 +18,6 @@ jobs:
         run: npm install
 
       - name: Run `npm test`
-        run: | 
-          npm test
-          if [[ $? == 0 ]]; \
-          then; \
-            echo "App testing successful"; \
-          else; \
-            echo "App testing unsuccessful"; \
-          fi
-        id: testing
+        run: npm test
+
       
