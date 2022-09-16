@@ -1,6 +1,7 @@
 name: CI Pipeline
 
 on:
+  workflow_dispatch: {}
   push:
     branches:
       - main
@@ -25,5 +26,3 @@ jobs:
         with:
           docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
           docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
-      
