@@ -2,9 +2,15 @@
     "name": "bitovi-blog-app",
     "version": "1.0.0",
     "scripts": {
-  "start": "node index.js"
+        "start": "node start.js",
+        "test": "jest",
+        "test:watch": "jest --watch"
     },
     "dependencies": {
-  "express": "^4.17.1"
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "jest": "^29.0.3",
+        "supertest": "^6.2.4"
     }
-  }
+}
