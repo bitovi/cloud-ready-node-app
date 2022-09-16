@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install deps
+        run: npm install
+
       - name: Run `npm test`
         run: | 
           npm test
