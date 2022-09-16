@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    pull_request:
+      - main
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run `npm test`
+        run: | 
+          npm test
+          if [[ $? == 0 ]]; \
+          then; \
+            echo "App testing successful"; \
+          else; \
+            echo "App testing unsuccessful"; \
+          fi
+        id: testing
+      
