@@ -19,5 +19,11 @@ jobs:
 
       - name: Run `npm test`
         run: npm test
+      
+      - name: Build image
+        uses: bitovi/github-actions-docker-publish@main
+        with:
+          docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
+          docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       
